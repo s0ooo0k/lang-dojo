@@ -28,13 +28,15 @@ coding-dojo/
 ├── README.md
 └── {language}-dojo/             # Language-specific training ground
     ├── src/
-    │   ├── main/{lang}/         # Implementation (with TODO placeholders)
-    │   └── test/{lang}/         # Pre-written test cases
+    │   ├── main/{lang}/
+    │   │   └── mission{N}/      # Implementation + Mission docs
+    │   │       ├── Code.kt      # TODO placeholders
+    │   │       ├── README.md    # Mission specification
+    │   │       └── Assistance.md # AI Assistant instructions
+    │   └── test/{lang}/
+    │       └── mission{N}/      # Pre-written test cases
     ├── docs/
-    │   └── mission{N}/
-    │       ├── knowledge.md     # Learning material (official docs based)
-    │       ├── README.md        # Mission specification
-    │       └── Assistance.md    # AI Assistant instructions
+    │   └── NN-concept-name.md   # Learning material (numbered, official docs based)
     └── build.gradle.kts         # Build configuration
 ```
 
@@ -71,13 +73,13 @@ claude
 
 ## Documentation Structure
 
-| File | Purpose | Usage |
-|------|---------|-------|
-| `knowledge.md` | 개념 및 문법 학습 자료 | 미션 시작 전 필수 학습 |
-| `README.md` | 미션 명세 및 예상 출력 | 요구사항 파악 |
-| `Assistance.md` | AI Assistant 지시서 | 힌트 제공 (정답 미포함) |
+| File | Location | Purpose |
+|------|----------|---------|
+| `NN-concept-name.md` | `docs/` | 개념 및 문법 학습 자료 (미션 시작 전 필수 학습) |
+| `README.md` | `src/main/.../missionN/` | 미션 명세 및 예상 출력 |
+| `Assistance.md` | `src/main/.../missionN/` | AI Assistant 지시서 (힌트 제공, 정답 미포함) |
 
-> **Note**: `knowledge.md`는 공식 문서를 참조하여 작성되며, 미션의 직접적인 정답은 포함하지 않습니다.
+> **Note**: 학습 자료(`docs/NN-*.md`)는 공식 문서를 참조하여 작성되며, 미션의 직접적인 정답은 포함하지 않습니다.
 
 ## Available Dojos
 
@@ -94,20 +96,23 @@ cd kotlin-dojo
 
 ```bash
 # Step 1: Study the concepts
-cat kotlin-dojo/docs/mission1/knowledge.md
+cat kotlin-dojo/docs/01-function-basics.md
 
-# Step 2: Verify RED state
+# Step 2: Read mission specification
+cat kotlin-dojo/src/main/kotlin/mission1/README.md
+
+# Step 3: Verify RED state
 cd kotlin-dojo && ./gradlew test --tests "mission1.*"
 # Expected: NotImplementedError
 
-# Step 3: Implement solution
+# Step 4: Implement solution
 # Edit: src/main/kotlin/mission1/Hello.kt
 
-# Step 4: Verify GREEN state
+# Step 5: Verify GREEN state
 ./gradlew test --tests "mission1.*"
 # Expected: BUILD SUCCESSFUL
 
-# Step 5: Report completion to AI Tutor
+# Step 6: Report completion to AI Tutor
 # In Claude Code: "Mission 1 완료했습니다."
 ```
 

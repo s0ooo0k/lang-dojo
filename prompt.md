@@ -9,13 +9,14 @@
     - 설명에는 반드시 예상된 출력 결과도 포함되어야 합니다.
     - 예상된 출력 결과는 제자가 완수해야 할 임무의 결과를 나타냅니다.
 - 각 디렉토리는 아래와 같은 디렉토리 구조를 갖습니다.
-    - src: 소스 코드가 위치하는 디렉토리입니다.
-    - test: 테스트 코드가 위치하는 디렉토리입니다.
-    - docs: 문서가 위치하는 디렉토리입니다.
-        - knowledge.md: **미션을 시작하기 전에 반드시 읽어야 할 학습 자료**입니다. 해당 미션에 필요한 개념, 문법, 예제 코드를 제공합니다. (당신이 직접 작성해야 합니다.)
-        - README.md: 디렉토리의 목적과 사용법을 설명하는 파일입니다.
-        - Assistance.md: 디렉토리에서 수행할 과제에 대한 당신의 조수(제자의 과제를 도와주는) 에 대한 지시서가 작성되어 있습니다. (당신이 직접 작성해야 합니다.)
-- knowledge.md에는 해당 미션에서 사용할 개념을 명확하게 설명합니다. 개념 설명, 문법, 예제 코드, 주의사항 등을 포함합니다.
+    - src/main/kotlin/missionN/: 소스 코드와 미션 문서가 함께 위치하는 디렉토리입니다.
+        - README.md: 해당 미션의 목표, 임무, 예상 출력을 설명하는 파일입니다.
+        - Assistance.md: 제자의 과제를 도와주는 조수에 대한 지시서입니다. (당신이 직접 작성해야 합니다.)
+    - src/test/kotlin/missionN/: 테스트 코드가 위치하는 디렉토리입니다.
+    - docs/: 학습 자료가 위치하는 디렉토리입니다.
+        - NN-개념명.md: **미션을 시작하기 전에 반드시 읽어야 할 학습 자료**입니다. (예: 01-function-basics.md)
+        - 해당 미션에 필요한 개념, 문법, 예제 코드를 제공합니다. (당신이 직접 작성해야 합니다.)
+- 학습 자료(docs/NN-개념명.md)에는 해당 미션에서 사용할 개념을 명확하게 설명합니다. 개념 설명, 문법, 예제 코드, 주의사항 등을 포함합니다.
 - Assistance.md 에는 조수에 대한 지시서가 존재하며, 조수는 절대로 직접적으로 답변을 알려주지는 않아야 합니다.
 
 ## RED → GREEN 학습 방식 (TDD 기반)
@@ -46,15 +47,14 @@ kotlin-dojo/
 ├── src/
 │   ├── main/kotlin/
 │   │   └── mission1/
-│   │       └── MissionCode.kt          # TODO() 플레이스홀더가 있는 구현 파일
+│   │       ├── MissionCode.kt          # TODO() 플레이스홀더가 있는 구현 파일
+│   │       ├── README.md               # 임무 설명, 예상 출력
+│   │       └── Assistance.md           # 조수 지시서 (힌트)
 │   └── test/kotlin/
 │       └── mission1/
 │           └── MissionTest.kt          # 미리 작성된 테스트 (처음엔 모두 실패)
 ├── docs/
-│   └── mission1/
-│       ├── knowledge.md                # 학습 자료 (개념, 문법, 예제)
-│       ├── README.md                   # 임무 설명, 예상 출력
-│       └── Assistance.md               # 조수 지시서 (힌트)
+│   └── 01-function-basics.md           # 학습 자료 (개념, 문법, 예제) - 넘버링으로 관리
 ├── build.gradle.kts                    # Gradle 빌드 설정
 └── README.md                           # 빠른 시작 가이드
 ```
@@ -64,24 +64,29 @@ kotlin-dojo/
 **Rust:**
 ```
 rust-dojo/
-├── src/lib.rs                   # todo!() 플레이스홀더
+├── src/
+│   ├── lib.rs                   # todo!() 플레이스홀더
+│   ├── mission1/
+│   │   ├── mod.rs               # 미션 구현 파일
+│   │   ├── README.md            # 임무 설명
+│   │   └── Assistance.md        # 조수 지시서
 ├── tests/mission_tests.rs       # 테스트
 ├── docs/
-│   ├── knowledge.md
-│   ├── README.md
-│   └── Assistance.md
+│   └── 01-rust-basics.md        # 학습 자료 (넘버링)
 └── Cargo.toml
 ```
 
 **Python:**
 ```
 python-dojo/
-├── src/mission1.py              # raise NotImplementedError
+├── src/
+│   └── mission1/
+│       ├── mission.py           # raise NotImplementedError
+│       ├── README.md            # 임무 설명
+│       └── Assistance.md        # 조수 지시서
 ├── tests/test_mission1.py       # 테스트
 ├── docs/
-│   ├── knowledge.md
-│   ├── README.md
-│   └── Assistance.md
+│   └── 01-python-basics.md      # 학습 자료 (넘버링)
 └── requirements.txt
 ```
 
@@ -95,9 +100,9 @@ python-dojo/
   - Rust: `cargo test mission_1`
   - Python: `pytest tests/test_mission1.py`
 
-### 학습 자료 작성 원칙 (knowledge.md)
+### 학습 자료 작성 원칙 (docs/NN-개념명.md)
 
-각 미션의 `knowledge.md`는 다음을 포함해야 합니다:
+각 미션의 학습 자료(예: `docs/01-function-basics.md`)는 다음을 포함해야 합니다:
 
 1. **공식 문서 참조**: 반드시 해당 언어의 공식 문서를 참조하여 작성합니다.
    - Kotlin: https://kotlinlang.org/docs/
@@ -109,11 +114,11 @@ python-dojo/
 5. **주의사항**: 흔히 하는 실수와 주의할 점
 6. **공식 문서 링크**: 더 깊이 학습할 수 있는 공식 문서 링크 제공
 
-**⚠️ 중요: knowledge.md에는 절대로 미션의 정답이 포함되어서는 안 됩니다!**
+**⚠️ 중요: 학습 자료에는 절대로 미션의 정답이 포함되어서는 안 됩니다!**
 - 예제 코드는 미션의 정답과 다른 예제를 사용해야 합니다.
 - 개념과 문법을 설명하되, 제자가 스스로 응용하여 미션을 풀도록 유도합니다.
 
-**knowledge.md는 제자가 미션을 시작하기 전에 반드시 읽어야 하는 필수 학습 자료입니다.**
+**학습 자료(docs/NN-개념명.md)는 제자가 미션을 시작하기 전에 반드시 읽어야 하는 필수 학습 자료입니다.**
 </task>
 
 <context>
