@@ -4,68 +4,134 @@ package mission3
 // Mission 3-1: 짝수/홀수 판별
 // ========================================
 fun isEven(n: Int): Boolean {
-    TODO("n이 짝수면 true, 홀수면 false 반환")
+    return n % 2 == 0
 }
 
 // ========================================
 // Mission 3-2: 부호 판별
 // ========================================
 fun getSign(n: Int): String {
-    TODO("양수: positive, 음수: negative, 0: zero 반환")
+    val sign = if (n > 0) {
+        "positive"
+    } else if (n < 0) {
+        "negative"
+    } else {
+        "zero"
+    }
+    return sign
 }
 
 // ========================================
 // Mission 3-3: 성적 등급 (when)
 // ========================================
 fun getGrade(score: Int): String {
-    TODO("90이상: A, 80이상: B, 70이상: C, 60이상: D, 그 외: F")
+    val grade = when (score) {
+        in 90..100 -> "A"
+        in 80..<90 -> "B"
+        in 70..<80 -> "C"
+        in 60..<70 -> "D"
+        else -> "F"
+    }
+    return grade
 }
 
 // ========================================
 // Mission 3-4: 요일 이름 (when)
-// ========================================
-fun getDayName(day: Int): String {
-    TODO("1: Monday, 2: Tuesday, ... 7: Sunday, 그 외: Invalid")
+fun getDayName(day: Int) = when (day) {
+    1 -> "Monday"
+    2 -> "Tuesday"
+    3 -> "Wednesday"
+    4 -> "Thursday"
+    5 -> "Friday"
+    6 -> "Saturday"
+    7 -> "Sunday"
+    else -> "Invalid"
 }
+
+//fun getDayName(day: Int): String {
+//    val name = when (day) {
+//        1 -> "Monday"
+//        2 -> "Tuesday"
+//        3 -> "Wednesday"
+//        4 -> "Thursday"
+//        5 -> "Friday"
+//        6 -> "Saturday"
+//        7 -> "Sunday"
+//        else -> "Invalid"
+//    }
+//    return name
+//}
 
 // ========================================
 // Mission 3-5: 범위 검사
 // ========================================
 fun isInRange(n: Int, min: Int, max: Int): Boolean {
-    TODO("n이 min~max 사이면 true (min, max 포함)")
+    return n in min..max
 }
 
 // ========================================
 // Mission 3-6: 1부터 N까지 합계 (for)
 // ========================================
 fun sumUpTo(n: Int): Int {
-    TODO("1부터 n까지의 합계 반환")
+    var sum = 0
+    for (i in 1..n) {
+        sum += i
+    }
+    return sum
 }
 
 // ========================================
 // Mission 3-7: 구구단 한 줄 (for)
 // ========================================
 fun multiplicationTable(n: Int): List<Int> {
-    TODO("n단의 결과를 리스트로 반환 (1~9)")
+    val result = mutableListOf<Int>()
+    for (i in 1..9) {
+        result.add(i * n)
+    }
+    return result
 }
 
 // ========================================
 // Mission 3-8: 팩토리얼
 // ========================================
 fun factorial(n: Int): Long {
-    TODO("n! 반환 (0! = 1, 1! = 1)")
+    var fac = 1L
+    for (i in 1..n) {
+        fac *= i
+    }
+    return fac
 }
 
 // ========================================
 // Mission 3-9: 카운트다운 (downTo)
 // ========================================
 fun countDown(from: Int): List<Int> {
-    TODO("from부터 1까지 역순 리스트 반환")
+    val result = mutableListOf<Int>()
+    for (i in from downTo 1) {
+        result.add(i)
+    }
+    return result
 }
 
 // ========================================
 // Mission 3-10: FizzBuzz
 // ========================================
 fun fizzBuzz(n: Int): String {
-    TODO("3과5: FizzBuzz, 3: Fizz, 5: Buzz, 그 외: 숫자")
+    val result = when {
+        n % 3 == 0 && n % 5 == 0 -> "FizzBuzz"
+        n % 3 == 0 -> "Fizz"
+        n % 5 == 0 -> "Buzz"
+        else -> "$n"
+    }
+    return result
 }
+
+/*
+fun fizzBuzz(n: Int) = when {
+    n % 3 == 0 && n % 5 == 0 -> "FizzBuzz"
+    n % 3 == 0 -> "Fizz"
+    n % 5 == 0 -> "Buzz"
+    else -> "$n"
+}
+
+ */
