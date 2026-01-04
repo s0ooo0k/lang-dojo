@@ -51,20 +51,35 @@ cd kotlin-dojo
 
 ## 미션 목록
 
-### ✅ Mission 1: Hello World (현재 미션)
-- **위치**: `src/main/kotlin/mission1/`
-- **목표**: 함수에서 문자열 반환하기
-- **📚 필독**: [학습 자료 (knowledge.md)](docs/mission1/knowledge.md) ← **먼저 읽으세요!**
-- **문서**: [Mission 1 가이드](docs/mission1/README.md)
+> 공식 Kotlin Tour 기반 커리큘럼 (TDD 방식 실습)
 
-### 🔒 Mission 2: 변수와 데이터 타입
-Mission 1 완료 후 사부님께 요청하세요
+### 초급 (Beginner)
 
-### 🔒 Mission 3: 함수 기본
-Mission 2 완료 후 진행
+- ✅ **Mission 1: Hello World** - 함수 기본, return
+- ✅ **Mission 2: Variables & Basic Types** - val/var, 기본 타입, 문자열 템플릿
+- 🔒 **Mission 3: Control Flow** - if/when 표현식, for/while 반복문, Range
+- 🔒 **Mission 4: Functions** - 기본 파라미터, named arguments, vararg
+- 🔒 **Mission 5: Collections** - List, Set, Map, mutable/immutable
+- 🔒 **Mission 6: Classes** - class, 생성자, data class, object
+- 🔒 **Mission 7: Null Safety** - ?, ?., ?:, !!
 
-### 🔒 이후 미션들
-순차적으로 잠금 해제됩니다
+### 중급 (Intermediate)
+
+- 🔒 **Mission 8: Extension Functions** - 확장 함수
+- 🔒 **Mission 9: Scope Functions** - let, run, with, apply, also
+- 🔒 **Mission 10: Lambda & Higher-order Functions** - 람다, 고차 함수
+- 🔒 **Mission 11: Interfaces & Inheritance** - 인터페이스, 상속, override
+- 🔒 **Mission 12: Sealed/Data/Enum Classes** - 특수 클래스
+- 🔒 **Mission 13: Properties & Delegation** - 프로퍼티, 위임
+- 🔒 **Mission 14: Generics** - 제네릭, in/out
+
+### 심화 (Advanced)
+
+- 🔒 **Mission 15: Coroutines 기초** - suspend, launch, async
+- 🔒 **Mission 16: Coroutines Context & Dispatcher** - 코루틴 컨텍스트
+- 🔒 **Mission 17: Flow** - 비동기 스트림
+- 🔒 **Mission 18: Channel & 동시성** - 채널, 동시성 패턴
+- 🔒 **Mission 19: DSL** - Kotlin DSL 작성
 
 ## 테스트 실행
 
@@ -78,15 +93,11 @@ Mission 2 완료 후 진행
 
 ## 학습 자료 및 도움말
 
-### 순서대로 활용하세요:
+### 각 미션 순서대로 활용하세요:
 
-1. **📚 `docs/mission1/knowledge.md`** - **필수! 미션 시작 전에 반드시 읽기**
-   - 개념 설명, 문법, 예제 코드
-
-2. **📋 `docs/mission1/README.md`** - 미션 설명 및 목표
-
-3. **💡 `docs/mission1/Assistance.md`** - 힌트 (정말 막힐 때만!)
-
+1. **📚 `docs/NN-개념명.md`** - **필수! 미션 시작 전에 반드시 읽기**
+2. **📋 `src/main/kotlin/missionN/README.md`** - 미션 설명 및 목표
+3. **💡 `src/main/kotlin/missionN/Assistance.md`** - 힌트 (정말 막힐 때만!)
 4. **⌨️ IntelliJ 자동완성**: `Ctrl+Space`
 
 ## 문제 해결
@@ -104,6 +115,6 @@ Mission 2 완료 후 진행
 
 **수련을 시작하세요!** 🥋
 
-**첫 번째 단계**: `docs/mission1/knowledge.md` 파일을 열어서 학습 자료를 읽으세요!
-
-**두 번째 단계**: 학습이 끝나면 `src/main/kotlin/mission1/Hello.kt` 파일을 열어 구현하세요!
+1. `docs/` 폴더에서 해당 미션의 학습 자료를 읽으세요
+2. `src/main/kotlin/missionN/README.md`에서 미션 목표를 확인하세요
+3. `TODO()`를 구현하고 테스트를 통과시키세요!
