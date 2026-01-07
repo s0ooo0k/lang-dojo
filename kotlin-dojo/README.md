@@ -57,21 +57,21 @@ cd kotlin-dojo
 
 - ✅ **Mission 1: Hello World** - 함수 기본, return
 - ✅ **Mission 2: Variables & Basic Types** - val/var, 기본 타입, 문자열 템플릿
-- 🔒 **Mission 3: Control Flow** - if/when 표현식, for/while 반복문, Range
-- 🔒 **Mission 4: Functions** - 기본 파라미터, named arguments, vararg
-- 🔒 **Mission 5: Collections** - List, Set, Map, mutable/immutable
-- 🔒 **Mission 6: Classes** - class, 생성자, data class, object
-- 🔒 **Mission 7: Null Safety** - ?, ?., ?:, !!
+- ✅ **Mission 3: Control Flow** - if/when 표현식, for/while 반복문, Range
+- ✅ **Mission 4: Functions** - 기본 파라미터, named arguments, vararg
+- 📦 **Mission 5: Collections** - List, Set, Map, mutable/immutable
+- 📦 **Mission 6: Classes** - class, 생성자, data class, object
+- 📦 **Mission 7: Null Safety** - ?, ?., ?:, !!
 
 ### 중급 (Intermediate)
 
-- 🔒 **Mission 8: Extension Functions** - 확장 함수
-- 🔒 **Mission 9: Scope Functions** - let, run, with, apply, also
-- 🔒 **Mission 10: Lambda & Higher-order Functions** - 람다, 고차 함수
-- 🔒 **Mission 11: Interfaces & Inheritance** - 인터페이스, 상속, override
-- 🔒 **Mission 12: Sealed/Data/Enum Classes** - 특수 클래스
-- 🔒 **Mission 13: Properties & Delegation** - 프로퍼티, 위임
-- 🔒 **Mission 14: Generics** - 제네릭, in/out
+- 📦 **Mission 8: Extension Functions** - 확장 함수
+- 📦 **Mission 9: Scope Functions** - let, run, with, apply, also
+- 📦 **Mission 10: Lambda & Higher-order Functions** - 람다, 고차 함수
+- 📦 **Mission 11: Interfaces & Inheritance** - 인터페이스, 상속, override
+- 📦 **Mission 12: Sealed/Data/Enum Classes** - 특수 클래스
+- 📦 **Mission 13: Properties & Delegation** - 프로퍼티, 위임
+- 📦 **Mission 14: Generics** - 제네릭, in/out
 
 ### 심화 (Advanced)
 
